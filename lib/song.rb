@@ -5,7 +5,7 @@ attr_accessor :name, :artist, :genre
 @@count = 0 
 @@genres = []
 @@artists = []
-@@genre_count = {}
+
 
 
  def initialize (name, artist, genre)
@@ -30,29 +30,18 @@ attr_accessor :name, :artist, :genre
   end 
   
   def self.genre_count
-   # @@genre_count = {}
-   
+   genre_count = {}
+  
     @@genres.each do |genre|
-     if @@genre_count.include?(genre)
-       @@genre_count[@genre] =  (i + 1)
+     if genre_count.include?(genre) then 
+       genre_count[genre] += 1
      else 
-      @@genre_count[@genre] = 1 
+      genre_count[genre] = 1 
      end 
     end 
-    @@genre_count
+    genre_count
   end 
   
-   def self.genre_count
-    genre_count = {}
-    @@genres.each do |genre|
-      if genre_count[genre]
-        genre_count[genre] += 1 
-      else
-        genre_count[genre] = 1
-      end
-    end
-    genre_count
-  end
   
 end 
 
