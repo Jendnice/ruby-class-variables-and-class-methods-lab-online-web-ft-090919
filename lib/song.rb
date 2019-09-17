@@ -31,13 +31,13 @@ attr_accessor :name, :artist, :genre
   
   def self.genre_count
    # @@genre_count = {}
-   @@genre_count = {x => i}
+   @@genre_count = {@genre => i}
    
     @@genres.each do |genre|
      if @@genre_count.include?(genre)
-       @@genre_count[x] =  (i + 1)
+       @@genre_count[@genre] =  (i + 1)
      else 
-      @@genre_count[x] = 1 
+      @@genre_count[@genre] = 1 
      end 
     end 
     @@genre_count
