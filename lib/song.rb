@@ -30,27 +30,16 @@ attr_accessor :name, :artist, :genre
   
   def self.genre_count
    @@genre_count = {}
-  
+   
     @@genres.each do |genre|
-     if @@genres[genre].include?(@genre)
-       @@genre_count[@genre] + 1
+     if @@genres_count.include?(genre)
+       @@genre_count[genre] +=  1
      else 
       @@genre_count[@genre] = 1 
      end 
     end 
     @@genre_count
   end 
-  
-  def add_student(student_name, grade)
-    @student_name = student_name
-    @grade = grade 
-    if @roster.include?(grade) 
-       @roster[grade] << student_name
-    else  
-     @roster[grade] = []
-     @roster[grade] << student_name
-    end 
-  end
   
   
   
